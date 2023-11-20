@@ -1,0 +1,85 @@
+name: Medication codelist request
+description: Use to record medication codelists
+title: '*MEDICATION*: [TITLE]'
+labels: ["medication", "codelist"]
+body: 
+  - type: markdown
+    attributes:
+      value: "**This template is designed to compile complete codelist construction metadata. Sections marked with a * are mandatory. Please note, you do not need to complete all sections when requesting as some will be completed during codelist construction.**"
+  - type: textarea
+    attributes:
+      label: User requirements
+      description: Explain what the purpose of the codelist is and give context of how it will be used, including - What is the purpose of the codelist? Will the codelist be used in a particular study? Will it be used alone or in combination with other codelists/logic? Generally the more information the better.
+      placeholder: 
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Sensitivity versus specificity
+      description: If possible, give an idea of what the balance should be, for example,  I want to identify all medications that could be prescribed as an antidepressant (more sensitive), versus I only want to identify medications that are very likely to be prescribed as an antidepressant (more specific). [Further info](https://en.wikipedia.org/wiki/Sensitivity_and_specificity).
+      placeholder: Leave blank if unsure
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Relevant definitions or links to important reference sources
+      description: If known, add any relevant definitions or important reference sources, which will aid codelist construction.
+      placeholder: Leave blank if unsure
+    validations:
+      required: false
+  - type: dropdown
+    id: codesys
+    attributes:
+      label: Coding system
+      description: Please select the coding system required (See [this blog](https://www.bennett.ox.ac.uk/blog/2023/06/an-introduction-to-clinical-codes-and-terminology-systems/) for further info on coding systems if needed).
+      options:
+        - dm+d
+        - SNOMED CT
+        - ICD-10
+        - Other (please detail in user requirements)
+        - I'm not sure (please detail intended use in user requirements)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Existing relevant codelists
+      description: Are you aware of any existing similar codelists ([OpenCodelists](https://www.opencodelists.org/), [Primary Care Domain Refsets](https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-collections/quality-and-outcomes-framework-qof/quality-and-outcome-framework-qof-business-rules/primary-care-domain-reference-set-portal))? Why aren't these suitable to reuse?
+      placeholder: Leave blank if unsure
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "***"
+  - type: markdown
+    attributes:
+      value: "**The sections below will usually be filled in during construction process rather than at initial request, leave blank if you are unsure**"
+  - type: textarea
+    attributes:
+      label: Search terms / synonyms / search strategy
+      placeholder: Leave blank if unsure
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Inclusion criteria for codes
+      placeholder: Leave blank if unsure
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Exclusion criteria for codes
+      placeholder: Leave blank if unsure
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Borderline cases
+      placeholder: Leave blank if unsure
+    validations:
+      required: false  
+  - type: input
+    attributes:
+      label: Final codelist
+      placeholder: Leave blank until completed
+    validations:
+      required: false
